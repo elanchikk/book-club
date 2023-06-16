@@ -1,0 +1,22 @@
+<div class="book - content">
+    <div class="title">
+        <h2>{{ book.title }}</h2>
+    </div>
+    <div class="Author">
+        <h2>{{ book.author }}</h2>
+    </div>
+    <div class="category">
+        <h2>{{ book.category }}</h2>
+    </div>
+    <div class="">
+        <h2>{{ book.date }}</h2>
+    </div>
+    <div class=" buttons">
+        <button mat-raised-button color="primary" (click)="onEdit(book.id)">
+            Edit
+        </button>
+        <button mat-raised-button color="primary" (click)="onDelete(book.id)">
+            Delete
+        </button>
+    </div>
+</div>
