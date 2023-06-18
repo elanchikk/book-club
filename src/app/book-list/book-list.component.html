@@ -1,7 +1,8 @@
 <div class="container">
-    <ng-container *ngFor="let book of Books$ | async; trackBy: bookId">
-        <app-book-card>
+    <ng-container *ngFor="let book of Books$ |async;  trackBy : bookId">
+        <app-book-card [book]="book" (idToDelete)="deleteBook($event)">
 
         </app-book-card>
     </ng-container>
+
 </div>

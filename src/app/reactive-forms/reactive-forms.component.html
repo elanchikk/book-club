@@ -1,3 +1,7 @@
+<button mat-fab extended (click)="gotoHome()">
+    <mat-icon>home</mat-icon>
+    Home
+</button>
 <div class="card">
     <mat-card>
         <mat-card-content>
@@ -5,8 +9,8 @@
             <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
                 <div class="container">
                     <mat-form-field class="example-full-width">
-                        <mat-label>Name</mat-label>
-                        <input type="text" matInput placeholder="Enter book name" formControlName="name" />
+                        <mat-label>Title</mat-label>
+                        <input type="text" matInput placeholder="Enter book name" formControlName="title" />
                         <mat-error
                             *ngIf="nameError?.invalid && nameError?.touched && nameError?.errors?.['required']">Name is
                             required *</mat-error>
@@ -15,7 +19,7 @@
                         <mat-label>Author</mat-label>
                         <input type="text" matInput formControlName="author" placeholder="Enter book author" />
                         <mat-error
-                            *ngIf="authorError?.invalid && authorError?.touched && authorError?.errors?.['required']">Poster
+                            *ngIf="authorError?.invalid && authorError?.touched && authorError?.errors?.['required']">ruthor
                             is required *</mat-error>
                         <mat-error
                             *ngIf="authorError?.invalid && authorError?.touched && authorError?.errors?.['pattern']">
@@ -26,20 +30,20 @@
                         <mat-label>Category</mat-label>
                         <input type="text" matInput placeholder="Enter category" formControlName="category" />
                         <mat-error
-                            *ngIf="categoryError?.invalid && categoryError?.touched && categoryError?.errors?.['maxlength']">Give
-                            few words</mat-error>
-                        <mat-error
-                            *ngIf="categoryError?.invalid && categoryError?.touched && categoryError?.errors?.['minlength']">Give
-                            some more words</mat-error>
-                        <mat-error
-                            *ngIf="categoryError?.invalid && categoryError?.touched && categoryError?.errors?.['required']">Summary
+                            *ngIf="categoryError?.invalid && categoryError?.touched && categoryError?.errors?.['required']">category
                             is required *</mat-error>
                     </mat-form-field>
                     <mat-form-field class="example-full-width">
                         <mat-label>Date</mat-label>
                         <input type="text" matInput placeholder="Enter Date" formControlName="date" />
                         <mat-error
-                            *ngIf="categoryError?.invalid && categoryError?.touched && categoryError?.errors?.['required']">Summary
+                            *ngIf="dateError?.invalid && dateError?.touched && dateError?.errors?.['required']">date
+                            is required *</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>url</mat-label>
+                        <input type="text" matInput placeholder="Enter url" formControlName="url" />
+                        <mat-error *ngIf="urlError?.invalid && urlError?.touched && urlError?.errors?.['required']">url
                             is required *</mat-error>
                     </mat-form-field>
                     <button type="submit" mat-raised-button color="primary">

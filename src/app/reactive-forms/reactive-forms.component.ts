@@ -15,18 +15,14 @@ import { BookServiceService } from 'src/app/book-service.service';
   styleUrls: ['./reactive-forms.component.css'],
 })
 export class ReactiveFormsComponent {
-  
-
   @Output() movieData: EventEmitter<any> = new EventEmitter();
 
   bookForm = this.fb.group({
-    name: ['', Validators.required],
-    poster: ['', [Validators.required, Validators.pattern('^http.*')]],
-    summary: [
-      '',
-      [Validators.required, Validators.minLength(5), Validators.maxLength(40)],
-    ],
-    rating: ['', [Validators.required, Validators.min(0), Validators.max(10)]],
+    title: ['', Validators.required],
+    url: ['', [Validators.required, Validators.pattern('^http.*')]],
+    author: ['', [Validators.required]],
+    category: ['', [Validators.required]],
+    date: ['', [Validators.required]],
   });
 
   constructor(
@@ -35,10 +31,14 @@ export class ReactiveFormsComponent {
     private router: Router
   ) {}
 
+  gotoHome() {
+    this.router.navigate(['/home']);
+  }
+
   onSubmit() {
     this.bookService
       .addbook(this.bookForm.value)
-      .subscribe((val) => this.router.navigate(['/movies']));
+      .subscribe((val) => this.router.navigate(['/home']));
     this.bookForm.reset();
   }
 
@@ -56,5 +56,9 @@ export class ReactiveFormsComponent {
 
   get dateError() {
     return this.bookForm.get('date');
+  }
+
+  get urlError() {
+    return this.bookForm.get('url');
   }
 }

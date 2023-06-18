@@ -1,16 +1,56 @@
 [
   {
     "id": "1",
-    "title": "ps",
-    "author": "kani",
-    "category": "tamil",
-    "date": "21/5/96"
+    "title": "The hunger games",
+    "author": "Suzanne Collins",
+    "category": "Fantasy",
+    "date": "14/10/2008",
+    "status": "",
+    "url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1586722975i/2767052.jpg"
   },
   {
     "id": "2",
-    "title": "ps2",
-    "author": "kani",
-    "category": "english",
-    "date": "21/6/96"
+    "title": "Twilight",
+    "author": "Stephanie Meyer",
+    "category": "Paranormal Romance",
+    "date": "5/10/2005",
+    "status": "",
+    "url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1361039443i/41865.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Harry Potter and the philosopher's stone",
+    "author": "J k rowling",
+    "category": "Magic",
+    "date": "26/6/1997",
+    "status": "",
+    "url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg"
+  },
+  {
+    "id": "4",
+    "title": "Fifty Shades Of grey",
+    "author": "E.L. James",
+    "category": "Contemporary Romance",
+    "date": "25/05/2011",
+    "status": "",
+    "url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1385207843i/10818853.jpg"
+  },
+  {
+    "id": "5",
+    "title": "The girl on the train",
+    "author": "Paula Hawkins",
+    "category": "Mystery Thriller",
+    "date": "06/01/2005",
+    "status": "",
+    "url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1574805682i/22557272.jpg"
+  },
+  {
+    "id": "6",
+    "title": "To kill a mocking bird",
+    "author": "Harper Lee",
+    "category": "Historical Fiction",
+    "date": "01,01,1960",
+    "status": "",
+    "url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1553383690i/2657.jpg"
   }
 ]

@@ -6,8 +6,10 @@ interface book {
   title: string;
   author: string;
   category: string;
-  status: string;
+
   date: string;
+  status: string;
+  url: string;
 }
 
 @Component({
@@ -18,25 +20,25 @@ interface book {
 export class BookCardComponent {
   constructor(private router: Router, private route: ActivatedRoute) {}
   @Input() book: book = {
-    id: '',
-    title: '',
-    author: '',
-    category: '',
-    status: '',
-    date: ''
+    id: '1',
+    title: 'sherlock holmes',
+    author: 'sherlock',
+    category: 'adventure',
+    date: '5 jan 21',
+    status: 'active',
+    url: '',
   };
+
   @Output() idToDelete: EventEmitter<any> = new EventEmitter();
-  @Output() idToEdit: EventEmitter<any> = new EventEmitter();
-  @Output() idToToggle: EventEmitter<any> = new EventEmitter();
+  // @Output() idToEdit: EventEmitter<any> = new EventEmitter();
+  // @Output() idToToggle: EventEmitter<any> = new EventEmitter();
 
   onDelete(id: string) {
     this.idToDelete.emit(id);
   }
 
   onEdit(id: string) {
-    this.router.navigate([`./edit-book/${id}`], {
-      relativeTo: this.route,
-    });
+    this.router.navigate([`./edit-book/${id}`]);
   }
 
   gotoBookInfo(id: string) {

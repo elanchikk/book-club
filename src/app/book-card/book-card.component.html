@@ -1,4 +1,4 @@
-<div class="book - content">
+<div class="bookcontent">
     <div class="title">
         <h2>{{ book.title }}</h2>
     </div>
@@ -8,15 +8,21 @@
     <div class="category">
         <h2>{{ book.category }}</h2>
     </div>
-    <div class="">
+    <div class="date">
         <h2>{{ book.date }}</h2>
+    </div>
+    <div class="image">
+        <img src="{{book.url }}" alt=" It contains image of book">
     </div>
     <div class=" buttons">
         <button mat-raised-button color="primary" (click)="onEdit(book.id)">
+            <mat-icon> edit </mat-icon>
             Edit
         </button>
-        <button mat-raised-button color="primary" (click)="onDelete(book.id)">
+        <button mat-raised-button color="warn" (click)="onDelete(book.id)">
+            <mat-icon> delete</mat-icon>
             Delete
         </button>
     </div>
+
 </div>

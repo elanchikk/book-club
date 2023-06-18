@@ -9,25 +9,23 @@ import {
   switchMap,
 } from 'rxjs';
 
-
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.css']
+  styleUrls: ['./book-list.component.css'],
 })
 export class BookListComponent {
-
   id: string='';
-    title: string='';
-    author: string='';
-    category: string='';
-    status: string='';
-    date: string='';
+  title: string = '';
+  author: string = '';
+  category: string = '';
+  status: string = '';
+  date: string = '';
+  url: string = '';
 
-    isAddingBook :boolean=false;
-isEditingBook:boolean=false;
+  isAddingBook: boolean = false;
+  isEditingBook: boolean = false;
 
-  
   Books$: any;
   ngOnInit() {
     this.Books$ = this.getBooks();
@@ -37,14 +35,13 @@ isEditingBook:boolean=false;
 
   getBooks() {
     return this.http
-      .get('https://648c2b678620b8bae7ec5fab.mockapi.io/:endpoint')      
+      .get('https://648c2b678620b8bae7ec5fab.mockapi.io/bookclub')
       .pipe(catchError((err) => []));
   }
 
   deleteBook(id: string) {
     this.Books$ = this.http
-      .delete(`https://648c2b678620b8bae7ec5fab.mockapi.io/:endpoint
-      /books/${id}`)
+      .delete(`https://648c2b678620b8bae7ec5fab.mockapi.io/bookclub/${id}`)
       .pipe(
         catchError((err) => []),
         concatMap(() => this.getBooks()) // in case two deletes are done
@@ -56,19 +53,18 @@ isEditingBook:boolean=false;
   }
 
   onAddingBooks() {
-    
     this.isAddingBook = false;
     this.isEditingBook = false;
     this.clearAllInputs();
   }
 
-  
   clearAllInputs() {
-    this.id= '';
+    this.id = '';
     this.author = '';
     this.category = '';
     this.status = '';
     this.date = '';
+    this.url = '';
   }
-
-  }
+  
+}

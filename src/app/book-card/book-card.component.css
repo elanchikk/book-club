@@ -1,0 +1,14 @@
+.image{
+    height: min-content;
+}
+.bookcontent{
+    width: min-content;
+    height: max-content;
+    background-color:aqua ;
+    border-radius: 30px;
+}
+.buttons{
+    align-items: center;
+    gap: 15 px;
+    display: flex;
+}

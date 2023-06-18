@@ -7,10 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { BookCardComponent } from './book-card/book-card.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookListComponent } from './book-list/book-list.component';
-import { CreateBookComponent } from './create-book/create-book.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,20 +28,21 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: BookDetailsComponent ,
+    component: HomeComponent,
   },
-
   {
     path: 'create-book',
     component: ReactiveFormsComponent,
   },
-  
+  {
+    path: 'book-details',
+    component: BookDetailsComponent,
+  },
+  {
+    path: 'edit-book/:id',
+    component: EditBookComponent,
+  },
 ];
-
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -51,11 +51,8 @@ const routes: Routes = [
     BookCardComponent,
     BookDetailsComponent,
     BookListComponent,
-    CreateBookComponent,
     EditBookComponent,
     ReactiveFormsComponent,
-
-
   ],
   imports: [
     BrowserModule,
@@ -72,9 +69,8 @@ const routes: Routes = [
     MatIconModule,
     MatToolbarModule,
     MatCardModule,
-    
-    ],
+  ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
