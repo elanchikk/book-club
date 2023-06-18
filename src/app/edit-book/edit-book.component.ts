@@ -15,7 +15,6 @@ import { BookServiceService } from 'src/app/book-service.service';
   styleUrls: ['./edit-book.component.css'],
 })
 export class EditBookComponent {
-  @Output() movieData: EventEmitter<any> = new EventEmitter();
   constructor(
     private fb: FormBuilder,
     private bookService: BookServiceService,

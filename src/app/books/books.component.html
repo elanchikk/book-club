@@ -1,0 +1,6 @@
+<div class="container">
+    <ng-container *ngFor="let book of Books$ | async ">
+        <app-book-card [book]="book" (idToDelete)="deleteBook($event)">
+        </app-book-card>
+    </ng-container>
+</div>

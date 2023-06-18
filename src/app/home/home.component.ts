@@ -10,6 +10,9 @@ export class HomeComponent {
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   gotoCreate() {
-    this.router.navigate(['/create-book'])
+    this.router.navigate(['/create-book']);
+  }
+  gotoSearch() {
+    this.router.navigate(['search']);
   }
 }

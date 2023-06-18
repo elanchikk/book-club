@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './search/search.component';
+import { BooksComponent } from './books/books.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
     path: 'edit-book/:id',
     component: EditBookComponent,
   },
+  {
+    path: 'search',
+    component: BookListComponent,
+  },
 ];
 
 @NgModule({
@@ -55,6 +60,7 @@ const routes: Routes = [
     EditBookComponent,
     ReactiveFormsComponent,
     SearchComponent,
+    BooksComponent,
   ],
   imports: [
     BrowserModule,

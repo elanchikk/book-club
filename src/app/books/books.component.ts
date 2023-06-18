@@ -12,14 +12,12 @@ import {
   timer,
 } from 'rxjs';
 import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-book-list',
-  templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.css'],
+  selector: 'app-books',
+  templateUrl: './books.component.html',
+  styleUrls: ['./books.component.css'],
 })
-export class BookListComponent {
+export class BooksComponent {
   id: string = '';
   title: string = '';
   author: string = '';
@@ -35,37 +33,12 @@ export class BookListComponent {
   });
 
   Books$: any;
-  bookDetails: any = [];
+
+  constructor(private fb: FormBuilder, private http: HttpClient) {}
+
   ngOnInit() {
-    this.searchForm
-      .get('name')
-      ?.valueChanges.pipe(
-        debounceTime(500),
-        distinctUntilChanged(),
-        switchMap((val) =>
-          timer(0, 4000).pipe(switchMap((n) => this.searchBook(val as string)))
-        )
-      )
-      .subscribe((data: any) => {
-        //console.log(data);
-        // console.log(this.names)
-        this.bookDetails = data;
-        console.log(this.bookDetails);
-      });
+    this.Books$ = this.getBooks();
   }
-
-  searchBook(name: string) {
-    console.log(name);
-    return this.http.get(
-      `https://648c2b678620b8bae7ec5fab.mockapi.io/bookclub?title=${name}`
-    );
-  }
-
-  constructor(
-    private fb: FormBuilder,
-    private http: HttpClient,
-    private router: Router
-  ) {}
 
   getBooks() {
     return this.http
@@ -99,9 +72,5 @@ export class BookListComponent {
     this.status = '';
     this.date = '';
     this.url = '';
-  }
-
-  gotoHome() {
-    this.router.navigate(['/home']);
   }
 }

@@ -1,8 +1,21 @@
-<div class="container">
-    <ng-container *ngFor="let book of Books$ |async;  trackBy : bookId">
-        <app-book-card [book]="book" (idToDelete)="deleteBook($event)">
+<button mat-fab extended (click)="gotoHome()">
+    <mat-icon> home</mat-icon>
+    Home
+  </button>
 
+
+<div class="search">
+    <form [formGroup]="searchForm">
+        <mat-form-field class="example-full-width">
+            <mat-label>Search book</mat-label>
+            <input matInput placeholder="Enter book name" formControlName="name" />
+        </mat-form-field>
+    </form>
+
+</div>
+<div class="container">
+    <ng-container *ngFor="let book of bookDetails ">
+        <app-book-card [book]="book" (idToDelete)="deleteBook($event)">
         </app-book-card>
     </ng-container>
-
 </div>
