@@ -42,8 +42,6 @@ export class BookCardComponent {
   }
 
   gotoBookInfo(id: string) {
-    this.router.navigate([`./info/${id}`], {
-      relativeTo: this.route,
-    });
+    this.router.navigate([`./book-details/${id}`]);
   }
 }

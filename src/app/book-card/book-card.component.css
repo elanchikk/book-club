@@ -1,14 +1,26 @@
 .image{
-    height: min-content;
+    height: fit-content;
+    width: fit-content;
 }
 .bookcontent{
     width: min-content;
     height: max-content;
-    background-color:aqua ;
+    background-color:aquamarine ;
     border-radius: 30px;
+    padding: auto;
+    margin: 20px;
+    border: aquamarine;
+    align-items: center;
+    color:rebeccapurple;
+    font-family: cursive;
 }
 .buttons{
-    align-items: center;
-    gap: 15 px;
     display: flex;
+    padding: auto;
+    gap: 10px;
+}
+.title{
+    padding: auto;
+    align-items: center;
+
 }

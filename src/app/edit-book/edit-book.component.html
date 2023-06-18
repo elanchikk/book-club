@@ -10,69 +10,35 @@
         <div class="container">
           <mat-form-field class="example-full-width">
             <mat-label>title</mat-label>
-            <input
-              type="text"
-              matInput
-              placeholder="Enter book title"
-              formControlName="title"
-            />
-            <mat-error
-              *ngIf="titleError?.invalid && titleError?.touched && titleError?.errors?.['required']"
-              >title is required *</mat-error
-            >
+            <input type="text" matInput placeholder="Enter book title" formControlName="title" />
+            <mat-error *ngIf="titleError?.invalid && titleError?.touched && titleError?.errors?.['required']">title is
+              required *</mat-error>
           </mat-form-field>
           <mat-form-field class="example-full-width">
             <mat-label>Author</mat-label>
-            <input
-              type="text"
-              matInput
-              formControlName="author"
-              value="hi"
-              placeholder="Enter book author"
-            />
-            <mat-error
-              *ngIf="authorError?.invalid && authorError?.touched && authorError?.errors?.['required']"
-              >Author is required *</mat-error
-            >
+            <input type="text" matInput formControlName="author" value="hi" placeholder="Enter book author" />
+            <mat-error *ngIf="authorError?.invalid && authorError?.touched && authorError?.errors?.['required']">Author
+              is required *</mat-error>
           </mat-form-field>
           <mat-form-field class="example-full-width">
             <mat-label>Category</mat-label>
-            <input
-              type="text"
-              matInput
-              placeholder="Enter category"
-              formControlName="category"
-            />
+            <input type="text" matInput placeholder="Enter category" formControlName="category" />
             <mat-error
-              *ngIf="categoryError?.invalid && categoryError?.touched && categoryError?.errors?.['required']"
-              >category is required *</mat-error
-            >
+              *ngIf="categoryError?.invalid && categoryError?.touched && categoryError?.errors?.['required']">category
+              is required *</mat-error>
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <mat-label>Date</mat-label>
-            <input
-              type="text"
-              matInput
-              placeholder="Enter Date"
-              formControlName="date"
-            />
+            <mat-label>Date Of Publication</mat-label>
+            <input type="text" matInput placeholder="Enter Date" formControlName="date" />
             <mat-error
-              *ngIf="categoryError?.invalid && categoryError?.touched && categoryError?.errors?.['required']"
-              >date is required *</mat-error
-            >
+              *ngIf="categoryError?.invalid && categoryError?.touched && categoryError?.errors?.['required']">date of
+              publication is required *</mat-error>
           </mat-form-field>
           <mat-form-field class="example-full-width">
             <mat-label>image url</mat-label>
-            <input
-              type="text"
-              matInput
-              placeholder="Enter url"
-              formControlName="url"
-            />
-            <mat-error
-              *ngIf="urlError?.invalid && urlError?.touched && urlError?.errors?.['required']"
-              >url is required *</mat-error
-            >
+            <input type="text" matInput placeholder="Enter url" formControlName="url" />
+            <mat-error *ngIf="urlError?.invalid && urlError?.touched && urlError?.errors?.['required']">url is required
+              *</mat-error>
           </mat-form-field>
           <button type="submit" mat-raised-button color="primary">
             Update Book

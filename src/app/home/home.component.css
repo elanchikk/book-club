@@ -1,0 +1,10 @@
+.menubar{
+    row-gap: 10px;
+    gap: 10px;
+    width: fit-content;
+    flex-wrap: wrap;
+    display:flex;
+    flex-direction: row;
+    
+
+}

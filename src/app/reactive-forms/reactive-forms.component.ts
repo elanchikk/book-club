@@ -19,7 +19,7 @@ export class ReactiveFormsComponent {
 
   bookForm = this.fb.group({
     title: ['', Validators.required],
-    url: ['', [Validators.required, Validators.pattern('^http.*')]],
+    url: ['', [Validators.required,Validators.pattern('^http.*')]],
     author: ['', [Validators.required]],
     category: ['', [Validators.required]],
     date: ['', [Validators.required]],
@@ -30,12 +30,20 @@ export class ReactiveFormsComponent {
     private bookService: BookServiceService,
     private router: Router
   ) {}
+  invalid: boolean = true;
 
   gotoHome() {
     this.router.navigate(['/home']);
   }
+  ngOnChanges() {
+    if (this.bookForm.valid) {
+      this.invalid = false;
+    }
+    console.log(this.invalid);
+  }
 
   onSubmit() {
+    console.log(this.bookForm.invalid);
     this.bookService
       .addbook(this.bookForm.value)
       .subscribe((val) => this.router.navigate(['/home']));

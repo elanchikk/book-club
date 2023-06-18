@@ -1,4 +1,13 @@
-<button mat-fab extended>
+<button mat-fab extended (click)="gotoHome()">
     <mat-icon>home</mat-icon>
     Home
 </button>
+<h1 class="title">{{ showDetail.title }}</h1>
+<h1 class="author">By {{ showDetail.author }}</h1>
+<div class="layout">
+    <img src={{showDetail.url}} alt="It contains image of the book">
+    <div>
+        <h2 class="date">published on : {{ showDetail.date }}</h2>
+        <h2 class="category">category : {{ showDetail.category }}</h2>
+    </div>
+</div>

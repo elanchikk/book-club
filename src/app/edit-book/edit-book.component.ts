@@ -25,7 +25,7 @@ export class EditBookComponent {
 
   bookForm = this.fb.group({
     title: ['', Validators.required],
-    author: ['', [Validators.required, Validators.pattern('^http.*')]],
+    author: ['', [Validators.required]],
     category: ['', Validators.required],
     date: ['', Validators.required],
     url: ['', [Validators.required, Validators.pattern('^http.*')]],

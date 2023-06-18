@@ -1,0 +1,34 @@
+.title{
+    font:italic;
+    font-family:cursive;
+    font-size:40px;
+    align-content: center;
+    align-items: center;
+    display: grid;
+    place-content: center;
+    grid-template: repeat(auto-fir,minmax(200px,0));
+    color:purple;
+
+    
+}
+
+.author{
+    display: grid;
+    place-content: center;
+    grid-template: repeat(auto-fir,minmax(200px,0));
+    color:blue
+}
+
+.date{
+    color: darkolivegreen;
+}
+.category{
+    color:darkgoldenrod
+}
+.layout{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-left: 50px;
+}

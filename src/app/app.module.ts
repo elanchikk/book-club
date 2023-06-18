@@ -19,6 +19,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
@@ -35,7 +36,7 @@ const routes: Routes = [
     component: ReactiveFormsComponent,
   },
   {
-    path: 'book-details',
+    path: 'book-details/:id',
     component: BookDetailsComponent,
   },
   {
@@ -53,6 +54,7 @@ const routes: Routes = [
     BookListComponent,
     EditBookComponent,
     ReactiveFormsComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
